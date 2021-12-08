@@ -1,9 +1,15 @@
 
+function isNum(value) {
+  if(typeof(value)=='number')
+    return value;
+}
 function average(numbers) {
-  if(numbers.some(isNaN) || numbers.length == 0)
+  var filtered = numbers.filter(isNum);
+  
+  if(filtered.length == 0)
     return NaN;
   else
-    return numbers.reduce((p, c)=> p + c, 0) / numbers.length;
+    return filtered.reduce((p, c)=> p + c, 0) / filtered.length;
 }
 
 module.exports = {average};
