@@ -1,9 +1,9 @@
 
 function average(numbers) {
-  if(!(isNaN(numbers)))
+  if(typeof(numbers) == 'number')
     return numbers.reduce((p, c)=> p + c, 0) / numbers.length;
   else
-    return 0;
+    return NaN;
 }
 
 module.exports = {average};
