@@ -1,6 +1,6 @@
 
 function average(numbers) {
-  if(numbers.some(isNaN) || isNaN(numbers))
+  if(numbers.some(isNaN))
     return;
   if(numbers.length == 0)
     return NaN;
