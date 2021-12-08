@@ -1,10 +1,5 @@
-
-function isNum(value) {
-  if(typeof(value)=='number')
-    return value;
-}
 function average(numbers) {
-  var filtered = numbers.filter(isNum);
+  var filtered = numbers.filter(number => !(isNaN(number)));
   
   if(filtered.length == 0)
     return NaN;
