@@ -14,3 +14,8 @@ it('reports the average as NaN on an empty list', ()=> {
 it('ignores NaN in the input', ()=> {
   expect(average([1, NaN, 2])).to.be.approximately(1.5, 0.01);
 });
+
+//assuming thresholds for battery operation when battery_temp> 5 deg C and battery_temp<45 deg C
+it('ingores outliers in the input which are outside the thresholds',()=> {
+  expect(average([6,-3,10,50])).to.be.approximately(8, 0.01);;
+});
