@@ -1,6 +1,11 @@
 const {expect} = require('chai');
 const {average} = require('../average');
 
+//assuming thresholds for battery opn. when temp> -5 deg C and temp<60 deg C
+it('ignores outliers in the input which are outside the thresholds',()=> {
+  expect(average([7,-50,8,80])).to.be.approximately(7.5, 0.01);;
+});
+
 it('computes average of a list of numbers', ()=> {
   // floating point numbers cannot be compared for equality,
   // hence allowing a delta tolerance
@@ -13,9 +18,4 @@ it('reports the average as NaN on an empty list', ()=> {
 
 it('ignores NaN in the input', ()=> {
   expect(average([1, NaN, 2])).to.be.approximately(1.5, 0.01);
-});
-
-//assuming thresholds for battery opn. when temp> -5 deg C and temp<60 deg C
-it('ignores outliers in the input which are outside the thresholds',()=> {
-  expect(average([7,-50,8,80])).to.be.approximately(7.5, 0.01);;
 });
