@@ -1,5 +1,6 @@
+
 function average(numbers) {
-  var filtered = numbers.filter(number => !(isNaN(number)));
+  var filtered = numbers.filter(number => !(isNaN(number)) && (number >= -5) && (number <= 60));
   
   if(filtered.length == 0)
     return NaN;
