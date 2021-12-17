@@ -16,6 +16,6 @@ it('ignores NaN in the input', ()=> {
 });
 
 //assuming thresholds for battery opn. when temp> 5 deg C and temp<45 deg C
-it('ingores outliers in the input which are outside the thresholds',()=> {
-  expect(average([6,-3,10,50])).to.be.approximately(8, 0.01);;
+it('ignores outliers in the input which are outside the thresholds',()=> {
+  expect(average([7,-3,8,50])).to.be.approximately(7.5, 0.01);;
 });
