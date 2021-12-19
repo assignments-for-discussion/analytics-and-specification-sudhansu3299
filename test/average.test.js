@@ -1,9 +1,9 @@
 const {expect} = require('chai');
 const {average} = require('../average');
 
-//assuming thresholds for battery opn. when temp> -5 deg C and temp<60 deg C
+//assuming thresholds for outliers when temp> -40 deg C and temp< +200 deg C
 it('ignores outliers in the input which are outside the thresholds',()=> {
-  expect(average([7,-50,8,80])).to.be.approximately(7.5, 0.01);;
+  expect(average([7,-60,100,500])).to.be.approximately(53.5, 0.01);;
 });
 
 it('computes average of a list of numbers', ()=> {
